@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La fantástica aventura del bulto, de Gaby Corpas</title>
+<meta name="description" content="La historia real de cómo me operaron de un tumor de tiroides, contada con la menor solemnidad posible. Libro en epub, descarga directa.">
+<meta name="author" content="Gaby Corpas">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#151515" media="(prefers-color-scheme: dark)">
+
+<meta property="og:type" content="book">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="La fantástica aventura del bulto">
+<meta property="og:description" content="Todo empezó con lo que parecía una picadura de mosquito. Libro en epub, descarga directa.">
+<!-- Para que la vista previa funcione al compartir, cambia esta ruta por la URL absoluta de GitHub Pages -->
+<meta property="og:image" content="https://naoxink.github.io/lafantasticaaventuradelbulto/cover.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M2 24h7c2 0 3-11 7-11s5 11 7 11h7' fill='none' stroke='%23999' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper: #ffffff;
+    --ink: #1b1b1b;
+    --mute: #5f5f5f;
+    --rule: #dcdcdc;
+    --tirita: #e7b8a0;
+    --tirita-ink: #9a4e31;
+    --sans: "Hanken Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --serif: "Newsreader", Georgia, "Times New Roman", serif;
+    color-scheme: light dark;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #151515;
+      --ink: #ececec;
+      --mute: #a3a3a3;
+      --rule: #333333;
+      --tirita-ink: #e7b8a0;
+    }
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 1rem;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--tirita); color: #1b1b1b; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--tirita-ink); outline-offset: 3px; }
+
+  .wrap { width: min(100% - 3rem, 64rem); margin-inline: auto; }
+
+  /* ---------- Portada ---------- */
+  .hero { padding-block: clamp(4rem, 15vh, 9.5rem) clamp(3rem, 8vw, 5rem); }
+  h1 {
+    margin: 0;
+    font-weight: 300;
+    font-size: clamp(2.5rem, 8vw, 5.75rem);
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    max-width: 13ch;
+    text-wrap: balance;
+  }
+  h1 strong { font-weight: 700; }
+
+  .skin { position: relative; height: 28px; margin-top: 2.5rem; }
+  .skin-line {
+    position: absolute; left: 0; right: 0; bottom: 0;
+    height: 1px; background: var(--ink);
+    transform-origin: left center;
+    animation: draw 0.9s ease-out both;
+  }
+  .bump {
+    position: absolute; bottom: 0; right: 13%;
+    width: clamp(52px, 9vw, 92px); height: auto;
+    overflow: visible;
+    transform-origin: 50% 100%;
+    animation: swell 0.8s 0.85s cubic-bezier(.3, 1.5, .5, 1) both;
+  }
+  .bump path { fill: var(--tirita); stroke: var(--ink); stroke-width: 1.2; vector-effect: non-scaling-stroke; }
+  @keyframes draw { from { transform: scaleX(0); } }
+  @keyframes swell { from { transform: scale(0); } }
+
+  .by { margin: 0.85rem 0 0; font-size: 1rem; color: var(--mute); }
+
+  .lead {
+    margin: clamp(2.5rem, 6vw, 4rem) 0 0;
+    max-width: 34rem;
+    font-family: var(--serif);
+    font-size: clamp(1.3rem, 2.4vw, 1.55rem);
+    line-height: 1.45;
+  }
+
+  .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1.25rem 2rem; margin-top: 2.25rem; }
+  .btn {
+    display: inline-block;
+    padding: 0.95rem 1.7rem;
+    background: var(--ink); color: var(--paper);
+    border-radius: 3px;
+    font-weight: 700; font-size: 1.05rem;
+    text-decoration: none;
+    transition: background-color 0.15s, color 0.15s;
+  }
+  .btn:hover { background: var(--tirita); color: #1b1b1b; }
+  .textlink { font-size: 1.05rem; text-underline-offset: 0.25em; text-decoration-thickness: 1px; }
+  .textlink:hover { color: var(--tirita-ink); }
+
+  .facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+    gap: 1.25rem 2rem;
+    margin: clamp(3rem, 7vw, 4.5rem) 0 0;
+    padding: 0;
+  }
+  .facts dt { font-size: 0.875rem; color: var(--mute); }
+  .facts dd { margin: 0.1rem 0 0; font-weight: 400; }
+
+  /* ---------- Secciones ---------- */
+  .section { border-top: 1px solid var(--rule); padding-block: clamp(3.25rem, 8vw, 6rem); }
+  .grid { display: grid; gap: 1.5rem 3rem; grid-template-columns: minmax(0, 1fr); }
+  @media (min-width: 52rem) {
+    .grid { grid-template-columns: 12rem minmax(0, 38rem); }
+  }
+  h2 { margin: 0; font-size: 1.05rem; font-weight: 700; line-height: 1.3; }
+
+  .prose { font-family: var(--serif); font-size: 1.25rem; line-height: 1.65; }
+  .prose p { margin: 0 0 1.25rem; }
+  .prose p:last-child { margin-bottom: 0; }
+
+  blockquote { margin: 0; }
+  blockquote + blockquote { margin-top: 3.25rem; }
+  blockquote p {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: clamp(1.5rem, 3.2vw, 2rem);
+    line-height: 1.3;
+    letter-spacing: -0.005em;
+    text-wrap: pretty;
+  }
+  blockquote footer { margin-top: 1rem; font-size: 0.9rem; color: var(--mute); }
+
+  /* ---------- Índice ---------- */
+  .toc { list-style: none; margin: 0; padding: 0; }
+  @media (min-width: 52rem) { .toc { columns: 2; column-gap: 3rem; } }
+  .toc li {
+    display: grid; grid-template-columns: 2.25rem 1fr;
+    padding: 0.55rem 0;
+    border-bottom: 1px solid var(--rule);
+    break-inside: avoid;
+    line-height: 1.35;
+  }
+  .toc .n { color: var(--mute); font-variant-numeric: tabular-nums; }
+  .toc-note { margin: 0 0 1.5rem; color: var(--mute); }
+
+  /* ---------- Cierre ---------- */
+  .closing h2 { font-size: clamp(1.8rem, 4.5vw, 3rem); font-weight: 300; letter-spacing: -0.02em; line-height: 1.1; max-width: 18ch; }
+  .closing .actions { margin-top: 2rem; }
+  .small { margin: 2.5rem 0 0; max-width: 38rem; font-size: 0.9rem; color: var(--mute); }
+
+  footer.site { border-top: 1px solid var(--rule); padding-block: 2rem 3rem; font-size: 0.9rem; color: var(--mute); }
+  footer.site .wrap { display: flex; flex-wrap: wrap; gap: 0.5rem 2rem; justify-content: space-between; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .skin-line, .bump { animation: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>La fantástica aventura del <strong>bulto</strong></h1>
+
+    <div class="skin" aria-hidden="true">
+      <span class="skin-line"></span>
+      <svg class="bump" viewBox="0 0 80 22" xmlns="http://www.w3.org/2000/svg" focusable="false">
+        <path d="M0.6 21.4 C 14 21.4, 18 1, 40 1 C 62 1, 66 21.4, 79.4 21.4 Z"/>
+      </svg>
+    </div>
+    <p class="by">de Gaby Corpas</p>
+
+    <p class="lead">Todo empezó con lo que parecía una picadura de mosquito. Esta es la historia real, contada con la menor solemnidad posible, de cómo acabé operado de un tumor de tiroides.</p>
+
+    <div class="actions">
+      <a class="btn" href="la-fantastica-aventura-del-bulto.epub" download>Descargar el epub</a>
+      <a class="textlink" href="#fragmento">Leer un fragmento</a>
+    </div>
+
+    <dl class="facts">
+      <div><dt>Formato</dt><dd>epub</dd></div>
+      <div><dt>Edición</dt><dd>Segunda</dd></div>
+      <div><dt>Idioma</dt><dd>Español</dd></div>
+      <div><dt>Extensión</dt><dd>Unas 14.000 palabras</dd></div>
+    </dl>
+  </div>
+</header>
+
+<main>
+  <section class="section" id="libro">
+    <div class="wrap grid">
+      <h2>De qué va</h2>
+      <div class="prose">
+        <p>Un bulto en el cuello que no era un mosquito. Ecografías en salas oscuras, citas que te rebotan como una bola de pinball, un PAAF con seis personas mirando y una becaria con el pulso nervioso, un preoperatorio de cuatro pruebas, un pijama de rayas amarillas y una cirujana que lo explica todo con una sonrisa.</p>
+        <p>Y después de la operación, lo que casi nadie cuenta: las curas, el calcio, el yodo radiactivo y las horas de sofá.</p>
+        <p>No es un libro médico ni pretende serlo. Es una historia contada tal como pasó, con humor, quejas y mucho cariño por la gente que estuvo ahí.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="fragmento">
+    <div class="wrap grid">
+      <h2>Un fragmento</h2>
+      <div>
+        <blockquote>
+          <p>“Siempre que se sale de una experiencia difícil, en mi opinión siempre habría que decir: ‘pues ya tengo otra historia que contar’.”</p>
+          <footer>Prefacio</footer>
+        </blockquote>
+        <blockquote>
+          <p>“…escucho mi nombre y ocurre la descarga del asiento. Me levanto y suelto lo más ocurrente que se me vino a la cabeza: ‘Yop’.”</p>
+          <footer>Capítulo 3, PAAF</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="indice">
+    <div class="wrap grid">
+      <h2>Índice</h2>
+      <div style="grid-column: 1 / -1; grid-row: 2;" class="toc-wrap">
+        <p class="toc-note">Un prefacio, veintiún capítulos y un epílogo.</p>
+        <ol class="toc">
+          <li><span class="n"></span><span>Prefacio</span></li>
+          <li><span class="n">1</span><span>Una mera introducción</span></li>
+          <li><span class="n">2</span><span>Caos</span></li>
+          <li><span class="n">3</span><span>PAAF</span></li>
+          <li><span class="n">4</span><span>No tragues</span></li>
+          <li><span class="n">5</span><span>Yo ‘confío’ en ellos</span></li>
+          <li><span class="n">6</span><span>Preoperatorio</span></li>
+          <li><span class="n">7</span><span>La prueba final</span></li>
+          <li><span class="n">8</span><span>La operación</span></li>
+          <li><span class="n">9</span><span>Noche gratis en suite de lujo con todo incluido</span></li>
+          <li><span class="n">10</span><span>Interludio</span></li>
+          <li><span class="n">11</span><span>El punto</span></li>
+          <li><span class="n">12</span><span>Diagnóstico</span></li>
+          <li><span class="n">13</span><span>Déjà vu</span></li>
+          <li><span class="n">14</span><span>El calcio, mi nuevo amigo</span></li>
+          <li><span class="n">15</span><span>Para rematar</span></li>
+          <li><span class="n">16</span><span>Quemaba</span></li>
+          <li><span class="n">17</span><span>3mm</span></li>
+          <li><span class="n">18</span><span>I-131</span></li>
+          <li><span class="n">19</span><span>El día 10</span></li>
+          <li><span class="n">20</span><span>A medio camino</span></li>
+          <li><span class="n">21</span><span>Venga, hasta luego</span></li>
+          <li><span class="n"></span><span>Epílogo</span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="porque">
+    <div class="wrap grid">
+      <h2>Por qué lo escribí</h2>
+      <div class="prose">
+        <p>Había oído muchas veces que contar una experiencia ayuda a superarla con menos trauma, y pensé que era una buena oportunidad para comprobarlo. Al terminar, creo que sí me ayudó.</p>
+        <p>Si estás pasando por una “aventura” parecida, o acompañando a alguien que la pasa, ojalá te haga compañía un rato. Y si no, al menos tendrás una historia más que contar.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section closing" id="descarga">
+    <div class="wrap">
+      <h2>Léelo en el móvil, en el e-reader o en una sala de espera.</h2>
+      <div class="actions">
+        <a class="btn" href="la-fantastica-aventura-del-bulto.epub" download>Descargar el epub</a>
+      </div>
+      <p class="small">Es una experiencia personal contada con humor, no un texto médico. Si tienes dudas sobre tu salud, consulta con tu médico.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>Gaby Corpas</span>
+    <span>La fantástica aventura del bulto, segunda edición</span>
+  </div>
+</footer>
+
+</body>
+</html>
